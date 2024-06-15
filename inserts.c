@@ -7,6 +7,31 @@
 #include <stdlib.h>
 #include "header.h"
 
+Aluno inserir_dados(){
+	Aluno al;
+	printf("\tMatricula: ");
+	fflush(stdout);
+	scanf("%d", &al.matricula);
+
+	printf("\tNome: ");
+	fflush(stdout);
+	scanf("%s", al.nome);
+
+	printf("\tNota 1: ");
+	fflush(stdout);
+	scanf("%f", &al.n1);
+
+	printf("\tNota 2: ");
+	fflush(stdout);
+	scanf("%f", &al.n2);
+
+	printf("\tNota 3: ");
+	fflush(stdout);
+	scanf("%f", &al.n3);
+
+	return al;
+}
+
 int insere_lista_inicio(Lista* li, struct aluno al){
 
     if(li == NULL) //Verifica se a lista é NULL (ou seja, se o descritor da lista existe)
@@ -18,6 +43,8 @@ int insere_lista_inicio(Lista* li, struct aluno al){
 
     if(no == NULL) //Verifica se a alocação de memória falhou
         return 0; //Retorna 0 indicando falha na inserção
+
+    al = inserir_dados();
 
     no->dados = al; //Copia os dados do aluno para o novo elemento
     no->prox = li->inicio; //Faz o novo elemento apontar para o atual primeiro elemento da lista

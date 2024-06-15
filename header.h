@@ -35,8 +35,7 @@ Aluno dados_aluno;
 //Função para criar uma nova lista (descritor) e inicializá-la
 Lista* cria_lista();
 
-
-Lista* cria_lista();
+void menu();
 
 void libera_lista(Lista* li);
 
@@ -44,13 +43,13 @@ int tamanho_lista(Lista* li);
 
 int lista_vazia(Lista* li);
 
-int insere_lista_incio(Lista* li, struct aluno al);
+int insere_lista_inicio(Lista* li, struct aluno al);
 
 int insere_lista_final(Lista* li, struct aluno al);
 
-int remove_lista_incio();
+int remove_lista_inicio(Lista* li);
 
-int remove_lista_final();
+int remove_lista_final(Lista* li);
 
 int consulta_lista_pos();
 

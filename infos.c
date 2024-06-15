@@ -4,7 +4,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include <header.h>
+#include "header.h"
 
 Lista* cria_lista(){
     //Aloca memória para uma nova lista e verifica se a alocação foi bem-sucedida
