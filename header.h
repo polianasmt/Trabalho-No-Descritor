@@ -35,7 +35,14 @@ Aluno dados_aluno;
 //Função para criar uma nova lista (descritor) e inicializá-la
 Lista* cria_lista();
 
+
+//Protótipos das funções
+
 void menu();
+
+void mensagem_falha_insercao();
+
+void mensagem_sucesso_insercao();
 
 void libera_lista(Lista* li);
 

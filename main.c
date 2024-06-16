@@ -11,32 +11,31 @@ int main(){
 
 	Lista *li;
 	li = cria_lista();
-
-//	tamanho_lista(li);
-//	lista_vazia(li);
-//	libera_lista(li);
 	int i = 1;
 	int opcao;
 
 	do{
-//		system("cls");
 		menu();
-
-
 
 		fflush(stdout);
 		scanf("%d", &opcao);
 
 		switch(opcao){
+
 			case 1:
-
-				printf("\n");
-				insere_lista_inicio(li, dados_aluno);
-
+				if(insere_lista_inicio(li, dados_aluno)){
+					mensagem_sucesso_insercao();
+				}else{
+					mensagem_falha_insercao();
+				}
 				break;
-			case 2:
-				insere_lista_final(li, dados_aluno);
 
+			case 2:
+				if(insere_lista_final(li, dados_aluno)){
+					mensagem_sucesso_insercao();
+				}else{
+					mensagem_falha_insercao();
+				}
 				break;
 
 			case 3:
@@ -71,6 +70,11 @@ int main(){
 
 			case 9:
 				i = 0;
+				break;
+
+			default:
+				printf("\tOpção inválida!");
+				break;
 		}
 
 	}while(i == 1);
