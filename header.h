@@ -44,6 +44,10 @@ void mensagem_falha_insercao();
 
 void mensagem_sucesso_insercao();
 
+void mensagem_sucesso_remover();
+
+void mensagem_removido_falha();
+
 void libera_lista(Lista* li);
 
 int tamanho_lista(Lista* li);

@@ -4,13 +4,12 @@ conforme a escolha do usuário através do menu.
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "header.h"
 
 int main(){
 
-	Lista *li;
-	li = cria_lista();
+	Lista *li = cria_lista();
+
 	int i = 1;
 	int opcao;
 
@@ -39,12 +38,20 @@ int main(){
 				break;
 
 			case 3:
-				remove_lista_inicio(li);
+				if(remove_lista_inicio(li)){
+					mensagem_sucesso_remover();
+				}else{
+					mensagem_removido_falha();
+				}
 
 				break;
 
 			case 4:
-				remove_lista_final(li);
+				if(remove_lista_final(li)){
+					mensagem_sucesso_remover();
+				}else{
+					mensagem_removido_falha();
+				}
 
 				break;
 
@@ -64,7 +71,7 @@ int main(){
 				break;
 
 			case 8:
-				tamanho_lista(li);
+				printf("\n\tA lista possui '%d' elementos cadastrados.", tamanho_lista(li));
 
 				break;
 

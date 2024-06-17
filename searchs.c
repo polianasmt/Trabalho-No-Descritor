@@ -6,6 +6,17 @@ imprime_lista(Lista* li, struct aluno *al)"
 #include <stdio.h>
 #include "header.h"
 
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
+
+	return 0;
+}
+
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
+
+	return 0;
+}
+
+
 void imprime_lista(Lista* li, struct aluno *al){
     if(li == NULL || li->inicio == NULL){ //Verifica se a lista é NULL ou está vazia
         return; //Se for NULL ou vazia, sai da função sem fazer nada

@@ -44,8 +44,7 @@ Aluno inserir_dados(){
 
 int insere_lista_inicio(Lista* li, struct aluno al){
 
-    if(li == NULL) //Verifica se a lista é NULL (ou seja, se o descritor da lista existe)
-        return 0; //Retorna 0 indicando falha na inserção
+	lista_vazia(li);
 
     Elem* no; //Declara um ponteiro para um novo elemento do tipo Elem
 
@@ -69,9 +68,8 @@ int insere_lista_inicio(Lista* li, struct aluno al){
 }
 
 int insere_lista_final(Lista* li, struct aluno al){
-    if(li == NULL){ //Verifica se a lista é NULL (ou seja, se o descritor da lista existe)
-        return 0; //Retorna 0 indicando falha na inserção
-    }
+
+	lista_vazia(li);
 
     Elem *no; //Declara um ponteiro para um novo elemento do tipo Elem
 
