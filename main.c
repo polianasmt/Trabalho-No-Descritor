@@ -11,13 +11,15 @@ int main(){
 	Lista *li = cria_lista();
 
 	int i = 1;
-	int opcao;
+	int opcao, posicao, matricula;
 
 	do{
+
+        system("cls");
 		menu();
 
-		fflush(stdout);
 		scanf("%d", &opcao);
+        getchar();
 
 		switch(opcao){
 
@@ -27,6 +29,8 @@ int main(){
 				}else{
 					mensagem_falha_insercao();
 				}
+
+				esperar_enter();
 				break;
 
 			case 2:
@@ -35,6 +39,8 @@ int main(){
 				}else{
 					mensagem_falha_insercao();
 				}
+
+				esperar_enter();
 				break;
 
 			case 3:
@@ -44,6 +50,7 @@ int main(){
 					mensagem_removido_falha();
 				}
 
+                esperar_enter();
 				break;
 
 			case 4:
@@ -53,34 +60,48 @@ int main(){
 					mensagem_removido_falha();
 				}
 
+                esperar_enter();
 				break;
 
 			case 5:
-//				consulta_lista_pos(li);
+				printf("\n\tPosição: ");
+				scanf("%d", &posicao);
+				consulta_lista_pos(li, posicao, &dados_aluno);
 
+                esperar_enter();
 				break;
 
 			case 6:
-//				consulta_lista_mat(li);
+				printf("\n\tMatricula: ");
+				scanf("%d", &matricula);
+				consulta_lista_mat(li, matricula, &dados_aluno);
 
+				esperar_enter();
 				break;
 
 			case 7:
 				imprime_lista(li, &dados_aluno);
 
+				esperar_enter();
 				break;
 
 			case 8:
 				printf("\n\tA lista possui '%d' elementos cadastrados.", tamanho_lista(li));
 
+				esperar_enter();
 				break;
 
 			case 9:
 				i = 0;
+				printf("\t\t\nEncerrando...");
+
+                esperar_enter();
 				break;
 
 			default:
 				printf("\tOpção inválida!");
+
+				esperar_enter();
 				break;
 		}
 

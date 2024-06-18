@@ -50,3 +50,4 @@ int lista_vazia(Lista* li){
 
     return 0; //Se a lista não for NULL e tiver elementos, retorna 0 (lista não vazia)
 }
+

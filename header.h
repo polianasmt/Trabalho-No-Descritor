@@ -22,7 +22,7 @@ struct elemento{
 //Definindo um apelido 'Elem' para a struct 'elemento'
 typedef struct elemento Elem;
 
-//Definição da struct descritor, que serve para descrever a lista
+//Definição da struct descritor
 struct descritor{
     struct elemento *inicio; //Ponteiro para o primeiro elemento da lista
     struct elemento *final; //Ponteiro para o último elemento da lista
@@ -35,7 +35,6 @@ Aluno dados_aluno;
 //Função para criar uma nova lista (descritor) e inicializá-la
 Lista* cria_lista();
 
-
 //Protótipos das funções
 
 void menu();
@@ -47,6 +46,14 @@ void mensagem_sucesso_insercao();
 void mensagem_sucesso_remover();
 
 void mensagem_removido_falha();
+
+void mensagem_posicao_nao_encontrada();
+
+void mensagem_matricula_nao_encontrada();
+
+void esperar_enter();
+
+void exibir_consulta(struct aluno *al);
 
 void libera_lista(Lista* li);
 
@@ -62,8 +69,8 @@ int remove_lista_inicio(Lista* li);
 
 int remove_lista_final(Lista* li);
 
-int consulta_lista_pos();
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al);
 
-int consulta_lista_mat();
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al);
 
-void imprime_lista();
+void imprime_lista(Lista* li, struct aluno *al);

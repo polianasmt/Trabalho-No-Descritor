@@ -7,7 +7,7 @@ informação na tela, como o menu de opções, mensagens de lista vazia ou lista
 #include "header.h"
 
 void menu(){
-	printf("\n---------------------------------------------");
+	printf("\n-------------------------------------------------");
 	printf("\n\t\t\tMENU");
 
 	printf("\n");
@@ -21,12 +21,11 @@ void menu(){
 	printf("\n\t[7] Exibir lista");
 	printf("\n\t[8] Exibir Tamanho da lista");
 	printf("\n\t[9] Sair");
-	printf("\n---------------------------------------------");
+	printf("\n------------------------------------------------");
 
 	printf("\n\tEscolha: ");
 
 }
-
 
 void mensagem_sucesso_insercao(){
 	printf("\n\tElemento inserido com sucesso.");
@@ -42,4 +41,30 @@ void mensagem_sucesso_remover(){
 
 void mensagem_removido_falha(){
 	printf("\n\tFalha na remoção.");
+}
+
+void mensagem_posicao_nao_encontrada(){
+	printf("\n\tA posição não existe.");
+}
+
+void mensagem_matricula_nao_encontrada(){
+	printf("\n\tA matricula não existe.");
+}
+
+void exibir_consulta(struct aluno *al){
+    printf("\n---------------------------------------------\n");
+    printf("\n\tMatricula: %d\n", al->matricula);
+    printf("\tNome: %s\n", al->nome);
+
+    printf("\tNotas: ");
+    printf("\n\t1° Nota: %.2f", al->n1);
+    printf("\n\t2° Nota: %.2f", al->n2);
+    printf("\n\t3° Nota: %.2f\n", al->n3);
+}
+
+void esperar_enter() {
+    printf("\n");
+    printf("\n\tPressione Enter para continuar...");
+    getchar(); // Espera pelo Enter
+    getchar();
 }

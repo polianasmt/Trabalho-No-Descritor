@@ -4,23 +4,63 @@ imprime_lista(Lista* li, struct aluno *al)"
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "header.h"
 
 int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
+    lista_vazia(li); //Verifica se a lista está vazia
 
-	return 0;
+    if (pos <= 0){ //Verifica se a posição é inválida (menor ou igual a zero)
+        return 0; //Retorna 0 indicando falha
+    }
+
+    Elem *no = li->inicio; //Inicia o ponteiro 'no' no início da lista
+    int i = 1; //Inicia o índice na posição 1
+
+    while(no != NULL && i < pos){ //Percorre a lista até encontrar a posição desejada ou o final da lista
+        no = no->prox; //Avança para o próximo elemento
+        i++; //Incrementa o índice
+    }
+
+    if(no == NULL){ //Verifica se o ponteiro 'no' é NULL (posição não encontrada)
+        mensagem_posicao_nao_encontrada(); //Função para exibir mensagem de posição não encontrada
+        return 0; //Retorna 0 indicando falha
+    } else {
+        *al = no->dados; //Copia os dados do elemento encontrado para a estrutura 'al'
+        exibir_consulta(al); //Imprime a lista
+        return 1; //Retorna 1 indicando sucesso
+    }
+
 }
 
 int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
+    lista_vazia(li); //Verifica se a lista está vazia
 
-	return 0;
+    Elem *no = li->inicio; //Inicia o ponteiro 'no' no início da lista
+
+    while(no != NULL && no->dados.matricula != mat) //Percorre a lista até encontrar a matrícula ou o final da lista
+        no = no->prox; //Avança para o próximo elemento
+
+    if(no == NULL || no->dados.matricula != mat){ //Verifica se a matrícula não foi encontrada
+        mensagem_matricula_nao_encontrada(); //Função para exibir mensagem de matrícula não encontrada
+        return 0; //Retorna 0 indicando falha
+    } else {
+        *al = no->dados; //Copia os dados do elemento encontrado para a estrutura 'al'
+        exibir_consulta(al); //Imprime a lista
+        return 1; //Retorna 1 indicando sucesso
+    }
+
 }
 
 
 void imprime_lista(Lista* li, struct aluno *al){
-    if(li == NULL || li->inicio == NULL){ //Verifica se a lista é NULL ou está vazia
-        return; //Se for NULL ou vazia, sai da função sem fazer nada
-    }
+	if(li == NULL){ //Verifica se a lista é NULL
+	       printf("\n\tLista vazia ou inexistente.");
+	    }
+
+	    if(li->inicio == NULL){ //Verifica se o início da lista é NULL
+	    	printf("\n\tLista vazia.");
+	    }
 
     Elem* no = li->inicio; //Cria um ponteiro para percorrer a lista, começando pelo primeiro elemento
 

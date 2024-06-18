@@ -91,5 +91,6 @@ int insere_lista_final(Lista* li, struct aluno al){
 
     li->final = no; //Atualiza o ponteiro de final da lista para o novo elemento
     li->qtd++; //Incrementa a quantidade de elementos na lista
+
     return 1; //Retorna 1 indicando sucesso na inserção
 }
